@@ -10,7 +10,8 @@ const submit = document.getElementById('submit-btn').addEventListener('click', f
  });
   async function fetchCity(cityName) {
   try{
-    const url = `https://api.weatherapi.com/v1/current.json?key=c09ecbe69ab24db1b4c100346262906&q=${cityName}`;
+   const API_KEY = "YOUR_API_KEY";
+const url = `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${cityName}`;
     const response = await fetch(url);
     const data = await response.json();
     const condition = data.current.condition.text.toLowerCase();
